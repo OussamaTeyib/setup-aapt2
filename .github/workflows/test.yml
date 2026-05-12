@@ -22,7 +22,8 @@ jobs:
         os: [ubuntu-latest, macos-latest, windows-latest]
 
     steps:
-      - uses: actions/checkout@v6
+      - name: Check out code
+        uses: actions/checkout@v6
 
       # Test with default version
       - name: Set up AAPT2 (default)
@@ -33,7 +34,7 @@ jobs:
         run: aapt2 version
 
       # Test with pinned version
-      - name: Setup AAPT2 (pinned)
+      - name: Set up AAPT2 (pinned)
         uses: ./
         with:
           version: '9.0.0-14304508'
