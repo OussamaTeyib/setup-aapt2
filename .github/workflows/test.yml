@@ -1,0 +1,40 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - uses: actions/checkout@v6
+
+      # Test with default version
+      - name: Set up AAPT2 (default)
+        uses: ./
+
+      - name: Test aapt2 (default)
+        shell: bash
+        run: aapt2 version
+
+      # Test with pinned version
+      - name: Setup AAPT2 (pinned)
+        uses: ./
+        with:
+          version: '9.0.0-14304508'
+
+      - name: Test aapt2 (pinned)
+        shell: bash
+        run: aapt2 version
