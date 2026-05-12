@@ -30,8 +30,17 @@ A GitHub Action that downloads **Android Asset Packaging Tool 2 (AAPT2)** from [
 ## Development
 
 ```bash
+# Install dependencies
 npm install
+
+# Build the project (TypeScript type checking)
 npm run build
+
+# Package the project (bundle with ncc)
+npm run package
+
+# Build and package in one command
+npm run all
 ```
 
 Always commit the `dist/` folder — GitHub Actions runs the compiled bundle directly.
