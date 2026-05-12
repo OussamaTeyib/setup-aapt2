@@ -3,7 +3,9 @@
 A GitHub Action that downloads **Android Asset Packaging Tool 2 (AAPT2)** from [Google Maven](https://maven.google.com/web/index.html#com.android.tools.build:aapt2) and adds it to `PATH`.
 
 > [!NOTE]
-> Unlike the AAPT2 in the Android build tools package, the version from Google Maven (used by this action) is bundletool-compatible.
+> Unlike the AAPT2 in the Android build tools package, the version from Google Maven (used by this action) is [bundletool-compatible](https://developer.android.com/build/building-cmdline#bundletool-build).
+
+---
 
 ## Usage
 
@@ -20,8 +22,10 @@ A GitHub Action that downloads **Android Asset Packaging Tool 2 (AAPT2)** from [
 - name: Set up AAPT2
   uses: OussamaTeyib/setup-aapt2@v1
   with:
-    version: '9.0.0-14304508'
+    version: '9.2.1-15009934'
 ```
+
+---
 
 ## Development
 
@@ -31,6 +35,8 @@ npm run build
 ```
 
 Always commit the `dist/` folder — GitHub Actions runs the compiled bundle directly.
+
+---
 
 ## License
 
