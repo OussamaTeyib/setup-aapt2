@@ -16,10 +16,52 @@ function getPlatformClassifier(): string {
   throw new Error(`Unsupported platform: ${platform}`)
 }
 
+// Fetches the latest stable version from Maven metadata
+async function getLatestStableVersion(): Promise<string> {
+  const metadataUrl = `${MAVEN_BASE}/maven-metadata.xml`
+  const metadataPath = await tc.downloadTool(metadataUrl)
+  const fs = await import('fs/promises')
+  const metadataContent = await fs.readFile(metadataPath, 'utf-8')
+
+  // Parse versions from XML: <version>X.Y.Z-XXXXXXXX</version>
+  const versionRegex = /<version>([\d.]+(?:-\d+)?)<\/version>/g
+  const versions: string[] = []
+  let match
+
+  while ((match = versionRegex.exec(metadataContent)) !== null) {
+    versions.push(match[1])
+  }
+
+  if (versions.length === 0) {
+    throw new Error('No versions found in Maven metadata')
+  }
+
+  // Filter out prerelease versions (alpha, beta, rc, etc.)
+  // and return the latest one
+  const stableVersions = versions.filter(
+    v => !/-(alpha|beta|rc|dev)\d*/i.test(v)
+  )
+
+  if (stableVersions.length === 0) {
+    throw new Error('No stable versions found in Maven metadata')
+  }
+
+  // Return the last version (Maven lists them in ascending order)
+  return stableVersions[stableVersions.length - 1]
+}
+
 // Main function
 async function run(): Promise<void> {
   try {
-    const version = core.getInput('version')
+    let version = core.getInput('version')
+
+    // Fetch latest stable version if not specified
+    if (!version) {
+      core.info('Fetching latest stable version from Maven…')
+      version = await getLatestStableVersion()
+      core.info(`Using latest stable version: ${version}`)
+    }
+
     const classifier = getPlatformClassifier()
 
     // Build the download URL

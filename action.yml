@@ -8,9 +8,8 @@ branding:
 
 inputs:
   version:
-    description: 'AAPT2 version to install.'
+    description: 'AAPT2 version to install. If not specified, uses the latest stable version.'
     required: false
-    default: '9.2.1-15009934'
 
 runs:
   using: 'node24'
