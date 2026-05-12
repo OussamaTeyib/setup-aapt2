@@ -7,7 +7,7 @@ A GitHub Action that downloads **Android Asset Packaging Tool 2 (AAPT2)** from [
 
 ## Usage
 
-**Basic** (uses default version `9.2.1-15009934`):
+**Basic** (automatically uses the latest stable version):
 
 ```yaml
 - name: Set up AAPT2

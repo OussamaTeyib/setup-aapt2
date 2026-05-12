@@ -17,7 +17,7 @@
 
 ## 1. Project Overview
 
-**setup-aapt2** is a GitHub Action that downloads AAPT2 from Google Maven and adds it to PATH.
+**setup-aapt2** is a GitHub Action that downloads AAPT2 from Google Maven and adds it to PATH. By default, it automatically fetches and installs the latest stable version; users can optionally pin a specific version.
 
 | Property       | Value                      |
 | -------------- | -------------------------- |
