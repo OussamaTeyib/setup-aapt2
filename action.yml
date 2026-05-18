@@ -1,4 +1,4 @@
-name: 'Setup AAPT2'
+name: 'Set up AAPT2'
 description: 'Downloads AAPT2 from Google Maven and adds it to PATH.'
 author: 'OussamaTeyib'
 
