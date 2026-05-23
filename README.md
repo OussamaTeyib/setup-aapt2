@@ -33,10 +33,10 @@ A GitHub Action that downloads **Android Asset Packaging Tool 2 (AAPT2)** from [
 # Install dependencies
 npm install
 
-# Build the project (TypeScript type checking)
+# Build the project
 npm run build
 
-# Package the project (bundle with ncc)
+# Package the project
 npm run package
 
 # Build and package in one command
