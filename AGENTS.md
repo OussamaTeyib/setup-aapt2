@@ -24,7 +24,7 @@
 | Language       | TypeScript                 |
 | Build system   | npm / tsc / ncc            |
 | Runtime        | Node.js 24                 |
-| Version        | 1.0.0                      |
+| Version        | 1.0.1                      |
 | License        | MIT                        |
 
 ---
@@ -66,7 +66,7 @@ setup-aapt2/
 | Tool        | Version                      |
 |-------------|------------------------------|
 | Node.js     | >=24                         |
-| npm         | 11.3.0                       |
+| npm         | 11.15.0                      |
 
 ### npm scripts
 
