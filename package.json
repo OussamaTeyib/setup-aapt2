@@ -1,6 +1,6 @@
 {
   "name": "setup-aapt2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub Action to set up AAPT2",
   "main": "dist/index.js",
   "packageManager": "npm@11.15.0",
@@ -17,13 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/OussamaTeyib/setup-aapt2.git"
   },
   "keywords": [
     "github-action",
     "aapt2",
     "android",
-    "bundletool"
+    "bundletool",
+    "typescript",
+    "setup"
   ],
   "author": "OussamaTeyib",
   "license": "MIT",
