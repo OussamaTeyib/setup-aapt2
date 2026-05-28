@@ -19,13 +19,13 @@
 
 **setup-aapt2** is a GitHub Action that downloads AAPT2 from Google Maven and adds it to PATH. By default, it automatically fetches and installs the latest stable version; users can optionally pin a specific version.
 
-| Property       | Value                      |
-| -------------- | -------------------------- |
-| Language       | TypeScript                 |
-| Build system   | npm / tsc / ncc            |
-| Runtime        | Node.js 24                 |
-| Version        | 1.0.1                      |
-| License        | MIT                        |
+| Property     | Value           |
+| ------------ | --------------- |
+| Language     | TypeScript      |
+| Build system | npm / tsc / ncc |
+| Runtime      | Node.js 24      |
+| Version      | 1.0.1           |
+| License      | MIT             |
 
 ---
 
@@ -63,10 +63,10 @@ setup-aapt2/
 
 ### Prerequisites
 
-| Tool        | Version                      |
-|-------------|------------------------------|
-| Node.js     | >=24                         |
-| npm         | 11.15.0                      |
+| Tool    | Version | 
+| ------- |-------- |
+| Node.js | >=24    |
+| npm     |         |
 
 ### npm scripts
 
