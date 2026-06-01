@@ -1,6 +1,7 @@
 # setup-aapt2
 
 [![Build](https://github.com/OussamaTeyib/setup-aapt2/actions/workflows/build.yml/badge.svg)](https://github.com/OussamaTeyib/setup-aapt2/actions/workflows/build.yml)
+[![CodeQL](https://github.com/OussamaTeyib/setup-aapt2/actions/workflows/codeql.yml/badge.svg)](https://github.com/OussamaTeyib/setup-aapt2/actions/workflows/codeql.yml)
 [![Test](https://github.com/OussamaTeyib/setup-aapt2/actions/workflows/test.yml/badge.svg)](https://github.com/OussamaTeyib/setup-aapt2/actions/workflows/test.yml)
 
 A GitHub Action that downloads **Android Asset Packaging Tool 2 (AAPT2)** from [Google Maven](https://maven.google.com/web/index.html#com.android.tools.build:aapt2) and adds it to `PATH`.
