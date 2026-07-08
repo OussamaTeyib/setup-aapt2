@@ -19,13 +19,13 @@
 
 **setup-aapt2** is a GitHub Action that downloads AAPT2 from Google Maven and adds it to PATH. By default, it automatically fetches and installs the latest stable version; users can optionally pin a specific version.
 
-| Property     | Value           |
-| ------------ | --------------- |
-| Language     | TypeScript      |
-| Build system | npm / tsc / ncc |
-| Runtime      | Node.js 24      |
-| Version      | 1.0.1           |
-| License      | MIT             |
+| Property     | Value               |
+| ------------ | ------------------- |
+| Language     | TypeScript          |
+| Build system | npm / tsc / esbuild |
+| Runtime      | Node.js 24          |
+| Version      | 1.0.1               |
+| License      | MIT                 |
 
 ---
 
@@ -64,8 +64,8 @@ setup-aapt2/
 
 ### Prerequisites
 
-| Tool    | Version | 
-| ------- |-------- |
+| Tool    | Version |
+| ------- | ------- |
 | Node.js | >=24    |
 | npm     |         |
 
@@ -78,7 +78,7 @@ npm install
 # Build the project (TypeScript type checking)
 npm run build
 
-# Package the project (bundle with ncc)
+# Package the project (bundle with esbuild)
 npm run package
 
 # Build and package in one command
@@ -99,7 +99,7 @@ npm run format
 The build process uses:
 
 - **TypeScript** for type checking (`npm run build`).
-- **ncc** (Next.js Compiler) to compile and bundle `src/main.ts` into a single `dist/index.js` file.
+- **esbuild** to compile and bundle `src/main.ts` into a single `dist/index.js` file.
 - The `dist/` folder must be committed as GitHub Actions runs the compiled bundle directly.
 
 Use `npm run build` for type checking only, `npm run package` for compilation and bundling, or `npm run all` for both steps.
@@ -107,7 +107,7 @@ Use `npm run build` for type checking only, `npm run package` for compilation an
 ### Dependencies
 
 - **Runtime dependencies**: `@actions/core`, `@actions/exec`, `@actions/io`, `@actions/tool-cache`
-- **Dev dependencies**: `@types/node`, `@vercel/ncc`, `typescript`
+- **Dev dependencies**: `@types/node`, `esbuild`, `typescript`
 
 ---
 
